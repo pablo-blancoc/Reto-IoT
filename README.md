@@ -3,4 +3,4 @@
 ## Autores:
 * [Pablo Blanco](https://github.com/pablo-blancoc)
 * [Daniel Córdova](https://github.com/DanielCordovaV)
-* Sebastián Márquez
+* [Sebastián Márquez](https://github.com/ShadowsOfAiur)
