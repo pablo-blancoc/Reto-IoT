@@ -1,4 +1,4 @@
-# Repositorio la implementación del reto de IoT
+# Repositorio de la implementación del reto de IoT
 
 ## Autores:
 * [Pablo Blanco](https://github.com/pablo-blancoc)
