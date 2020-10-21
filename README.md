@@ -6,5 +6,10 @@
 * [Sebastián Márquez](https://github.com/ShadowsOfAiur)
 
 
-## Modelo para el desarrollo de bases de datos
-* ![Modelo relacional](./assets/relationalDiagram.png)
+## Modelos para el desarrollo de bases de datos
+
+### Modelo Relacional
+![Modelo relacional](./assets/relationalDiagram.png)
+
+### Modelo de Entidad-Relación
+(pending)
