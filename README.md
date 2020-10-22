@@ -4,6 +4,7 @@
 * Autores
 * Estructura del proyecto
 * Diagramas para la base de datos
+[Read our installation guide](#autores)
 
 ___
 
@@ -27,7 +28,7 @@ ___
 ## Modelos para el desarrollo de bases de datos
 
 ### Modelo Relacional
-![Modelo Relacional](./assets/relationalDiagram.png)
+![Modelo Relacional](./assets/relationalDiagram.jpg)
 
 ### Modelo de Entidad-Relación
 ![Modelo Entidad-Relacion](./assets/ERDiagram.jpg)
