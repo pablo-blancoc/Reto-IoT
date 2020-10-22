@@ -17,7 +17,7 @@
 ## Modelos para el desarrollo de bases de datos
 
 ### Modelo Relacional
-![Modelo relacional](./assets/relationalDiagram.png)
+![Modelo Relacional](./assets/relationalDiagram.png)
 
 ### Modelo de Entidad-Relación
-(pending)
+![Modelo Entidad-Relacion](./assets/ERDiagram.jpg)
