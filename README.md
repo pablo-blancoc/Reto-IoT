@@ -1,6 +1,8 @@
 # Repositorio de la implementación del reto de IoT
 
-# Ir a sección:
+___
+
+## Ir a sección:
 * [Autores](#autores)
 * [Estructura del proyecto](#estructura-del-proyecto)
 * [Diagramas para la base de datos](#diagramas-para-el-desarrollo-de-bases-de-datos)
