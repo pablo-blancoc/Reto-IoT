@@ -1,10 +1,9 @@
 # Repositorio de la implementación del reto de IoT
 
 # Ir a sección:
-* Autores
-* Estructura del proyecto
-* Diagramas para la base de datos
-[Read our installation guide](#autores)
+* [Autores](#autores)
+* [Estructura del proyecto](#estructura-del-proyecto)
+* [Diagramas para la base de datos](#diagramas-para-el-desarrollo-de-bases-de-datos)
 
 ___
 
@@ -25,7 +24,7 @@ ___
 
 ___
 
-## Modelos para el desarrollo de bases de datos
+## Diagramas para el desarrollo de bases de datos
 
 ### Modelo Relacional
 ![Modelo Relacional](./assets/relationalDiagram.jpg)
