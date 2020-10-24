@@ -1,3 +1,8 @@
 # Archivos generados por la Mac
 .DS_Store
 /.DS_Store
+
+# Archivos cache de python y ambiente de trabajo
+/__pycache__/
+__pycache__/
+venv/
