@@ -2,17 +2,17 @@
 
 
 ## Definición del problema
-> *What*
+> **What**
 > 
 >
 >
 
-> *Who*
+> **Who**
 > 
 >
 >
 
-> *Why*
+> **Why**
 >
 >
 >
