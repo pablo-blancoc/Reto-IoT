@@ -4,6 +4,8 @@ ___
 
 ## Ir a sección:
 * [Autores](#autores)
+* [Bitácora del proyecto](https://github.com/pablo-blancoc/Reto-IoT/tree/master/docs/bitacora)
+* [Project Managment](https://github.com/pablo-blancoc/Reto-IoT/tree/master/docs/project-managment)
 * [Estructura del proyecto](#estructura-del-proyecto)
 * [Diagramas para la base de datos](#diagramas-para-el-desarrollo-de-bases-de-datos)
 
