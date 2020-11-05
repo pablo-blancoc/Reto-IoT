@@ -1,5 +1,12 @@
-Cosas por hacer:  (4/Nov)
+# Bitácora de trabajo
 
+## Ir a una momento
++ [04 Nov](#4-de-noviembre)
++ [05 Nov](#5-de-noviembre)
+___
+### 4 de noviembre
+
+Definición de cosas por hacer y roles:
 - Comprar la cámara									$ 220
 - Algoritmo que detecte el cubrebocas							Daniel C.
 - App movil para el acceso								Pablo B.
@@ -17,8 +24,13 @@ Cosas por hacer:  (4/Nov)
 3. Se espera unos segundos, y después toma la fotografía para detectar el cubrebocas.
 4. Prende un led verde cuando se de el acceso, rojo cuando no. Prende otro led cada que se tome una foto.
 
-Cosas por hacer de cada quien:
+Definición de pasos a seguir:
 Pablo - Llevar Raspberry Pi y kit con Sebas (esta semana)
 Sebas - Cámara y empezar la instalación
 Daniel - Empezar con server y definir la base de datos a usar
 
+___
+### 5 de noviembre
+
+Se definió el problema y se comenzó a trabajar en la parte de [Project Managment](https://github.com/pablo-blancoc/Reto-IoT/tree/master/docs/project-managment).
+___
