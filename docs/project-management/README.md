@@ -1,4 +1,4 @@
-# Project Managment (metodología SCRUM)
+# Project Management (metodología SCRUM)
 
 ## Definición del problema
 - **What?**  
@@ -9,3 +9,4 @@ Las personas que son responsables de control de ingreso del edificio, así como 
 
 - **Why?**  
 Debido a que este control es de suma importancia, se debe destinar gran presupuesto al control del mismo que puede ser reducido con un control automático, disminuyendo así el capital humano y el tiempo de entrada al edificio; evitando la formación de cuellos de botella.
+
