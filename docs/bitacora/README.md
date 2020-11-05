@@ -32,5 +32,5 @@ Daniel - Empezar con server y definir la base de datos a usar
 ___
 ### 5 de noviembre
 
-Se definió el problema y se comenzó a trabajar en la parte de [Project Managment](https://github.com/pablo-blancoc/Reto-IoT/tree/master/docs/project-managment).
+Se definió el problema y se comenzó a trabajar en la parte de [Project Management](https://github.com/pablo-blancoc/Reto-IoT/tree/master/docs/project-management).
 ___
