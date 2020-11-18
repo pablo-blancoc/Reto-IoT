@@ -1,8 +1,38 @@
 # Archivos generados por la Mac
 .DS_Store
-/.DS_Store
+*/.DS_Store
 
 # Archivos cache de python y ambiente de trabajo
-/__pycache__/
+*/__pycache__/
 __pycache__/
-venv/
+*/venv/
+
+
+# Archivos generados por Ionic
+*~
+*.sw[mnpcod]
+.tmp
+*.tmp
+*.tmp.*
+*.sublime-project
+*.sublime-workspace
+*/Thumbs.db
+*/UserInterfaceState.xcuserstate
+*/$RECYCLE.BIN/
+
+*.log
+*/log.txt
+*/npm-debug.log*
+
+*/.idea
+*/.ionic
+*/.sass-cache
+*/.sourcemaps
+*/.versions
+*/.vscode
+*/coverage
+*/dist
+*/node_modules
+*/platforms
+*/plugins
+*/www
