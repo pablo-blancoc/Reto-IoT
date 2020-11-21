@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QrcodePage implements OnInit {
 
-  constructor() { }
+  qrData: string = "Pablo Blanco";
+  elementType: 'url' | 'canvas' | 'img' = 'canvas';
+
+  constructor() {}
 
   ngOnInit() {
   }

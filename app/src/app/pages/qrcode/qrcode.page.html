@@ -14,6 +14,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+  <h3 class="all-black page-title">Código de acceso</h3>
+  
+  <div class="container">
+    
+      <ngx-qrcode class="qrcode"
+        value = "{{ qrData }}"
+        qrc-errorCorrectionLevel = "L">
+      </ngx-qrcode>
+
+  </div>
+
+  <h3 class="all-black page-subtitle">Éste es tu código de acceso personal al edificio</h3>
+  <h3 class="all-black page-subtitle">Acércate al lector, espera a que se tome la foto y podrás entrar</h3>
+  <h3 class="all-black page-subtitle">Recuerda que es indispensable que cuentes con cubrebocas para el ingreso</h3>
 
 </ion-content>
