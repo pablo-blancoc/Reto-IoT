@@ -2,4 +2,31 @@
 
 <ion-content>
 
+    <ion-list>
+        
+        <ion-card *ngFor="let item of data">
+            
+            <ion-card-title *ngIf="item.entrada" color="success" class="ion-padding">
+                Entrada
+            </ion-card-title>
+            <ion-card-title *ngIf="!item.entrada" color="danger" class="ion-padding">
+                Salida
+            </ion-card-title>
+            
+            <ion-card-content>
+
+                <strong>Hora:</strong> {{ item.hora }}
+                <br>
+                <strong>Ubicación:</strong> {{ item.ubicacion }}
+
+            </ion-card-content>
+        </ion-card>
+
+    </ion-list>
+
+    <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="loadData($event)"  class="ion-padding">
+        <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Recuperando más datos">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
 </ion-content>
