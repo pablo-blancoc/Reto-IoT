@@ -12,9 +12,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'qrcode',
+    loadChildren: () => import('./pages/qrcode/qrcode.module').then( m => m.QrcodePageModule)
+  },
+  {
     path: '**',
     redirectTo: 'home'
-  }
+  },
 ];
 
 @NgModule({
