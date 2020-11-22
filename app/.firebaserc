@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sano-ingreso": {
+      "hosting": {
+        "app": [
+          "sano-ingreso"
+        ]
+      }
+    }
+  }
+}
