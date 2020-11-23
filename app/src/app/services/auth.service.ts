@@ -19,7 +19,7 @@ export class AuthService {
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         }
         return of(null);
-      });
+      })
     )
   }
 
@@ -29,6 +29,10 @@ export class AuthService {
     } catch( error ){
       console.log( 'Error -> ', error );
     }
+  }
+
+  isEmailVerified(user: User): boolean {
+    return user.emailVerified == true;
   }
 
   async resetPassword(email:string): Promise<void> {

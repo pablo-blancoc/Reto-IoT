@@ -27,9 +27,17 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
   },
-   {
-    path: '**',
-    redirectTo: 'home'
+  {
+    path: 'verify-email',
+    loadChildren: () => import('./pages/verify-email/verify-email.module').then( m => m.VerifyEmailPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+  },
+  {
+   path: '**',
+   redirectTo: 'home'
   },
 ];
 

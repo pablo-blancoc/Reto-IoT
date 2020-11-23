@@ -1,9 +1,51 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Log-In</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+  <form>
+
+    <ion-list>
+
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" #email required></ion-input>
+      </ion-item>
+      
+      <ion-item lines="full">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" #password required></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" (click)="onLogin(email, password)" expand="block">
+          Iniciar sesión
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+  <ion-row>
+    <ion-col>
+      <p>
+        <a href="/register">Create an account</a>
+      </p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <p>
+        <a href="/forgot-password">Forgot your password?</a>
+      </p>
+    </ion-col>
+  </ion-row>
 
 </ion-content>
