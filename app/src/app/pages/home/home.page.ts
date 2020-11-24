@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll, PopoverController} from '@ionic/angular';
+import { IonInfiniteScroll, iosTransitionAnimation, PopoverController} from '@ionic/angular';
 import { LogoutComponent } from '../../components/logout/logout.component';
 
 
@@ -29,6 +29,8 @@ export class HomePage implements OnInit {
     const popover = await this.popoverCtrl.create({
       component: LogoutComponent,
       event: event,
+      mode: 'ios',
+      cssClass: 'pop-over-style'
     });
 
     await popover.present();
