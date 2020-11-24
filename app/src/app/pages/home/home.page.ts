@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll} from '@ionic/angular';
+import { IonInfiniteScroll, PopoverController} from '@ionic/angular';
+import { LogoutComponent } from '../../components/logout/logout.component';
 
 
 @Component({
@@ -19,9 +20,19 @@ export class HomePage implements OnInit {
 
   @ViewChild( IonInfiniteScroll ) infiniteScroll: IonInfiniteScroll;
 
-  constructor() {}
+  constructor( private popoverCtrl: PopoverController ) {}
 
   ngOnInit() {
+  }
+
+  async onPopover( event ) {
+    const popover = await this.popoverCtrl.create({
+      component: LogoutComponent,
+      event: event,
+    });
+
+    await popover.present();
+
   }
 
   loadData( event ) {

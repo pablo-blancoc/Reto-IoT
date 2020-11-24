@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './shared/auth.guard';
+import { Auth02Guard } from './shared/auth02.guard';
 
-const routes: Routes = [
+const routes: Routes = [ 
   {
     path: '',
     redirectTo: 'home',
@@ -9,23 +11,22 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: 'qrcode',
-    loadChildren: () => import('./pages/qrcode/qrcode.module').then( m => m.QrcodePageModule)
+    loadChildren: () => import('./pages/qrcode/qrcode.module').then( m => m.QrcodePageModule),
+    canActivate:[AuthGuard]
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
+    canActivate:[Auth02Guard]
   },
   {
     path: 'register',
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
-  },
-  {
-    path: 'admin',
-    loadChildren: () => import('./pages/admin/admin.module').then( m => m.AdminPageModule)
   },
   {
     path: 'verify-email',
@@ -38,7 +39,7 @@ const routes: Routes = [
   {
    path: '**',
    redirectTo: 'home'
-  },
+  }
 ];
 
 @NgModule({
