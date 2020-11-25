@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './shared/auth.guard';
-import { Auth02Guard } from './shared/auth02.guard';
 
 const routes: Routes = [ 
   {
@@ -15,14 +14,8 @@ const routes: Routes = [
     canActivate:[AuthGuard]
   },
   {
-    path: 'qrcode',
-    loadChildren: () => import('./pages/qrcode/qrcode.module').then( m => m.QrcodePageModule),
-    canActivate:[AuthGuard]
-  },
-  {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-    canActivate:[Auth02Guard]
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'register',
@@ -38,7 +31,7 @@ const routes: Routes = [
   },
   {
    path: '**',
-   redirectTo: 'home'
+   redirectTo: 'login'
   }
 ];
 

@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonInfiniteScroll, iosTransitionAnimation, PopoverController} from '@ionic/angular';
+import { Component, OnInit } from '@angular/core';
+import { PopoverController} from '@ionic/angular';
 import { LogoutComponent } from '../../components/logout/logout.component';
-
+import { AuthService } from '../../services/auth.service';
+import { Observable } from 'rxjs';
+import { User } from '../../shared/user.interface';
 
 @Component({
   selector: 'app-home',
@@ -10,55 +12,30 @@ import { LogoutComponent } from '../../components/logout/logout.component';
 })
 export class HomePage implements OnInit {
 
-  registro = {
-    hora: "",
-    entrada: false,
-    ubicacion: "",
-  }
+  codeReceived: boolean = false;
 
-  data: any[] = Array();
+  constructor( private popoverCtrl: PopoverController, private authSvc: AuthService ) {}
 
-  @ViewChild( IonInfiniteScroll ) infiniteScroll: IonInfiniteScroll;
+  user$: Observable<User> = this.authSvc.afAuth.user;
 
-  constructor( private popoverCtrl: PopoverController ) {}
+  qrData: string = "";
+  elementType: 'url' | 'canvas' | 'img' = 'canvas';
 
   ngOnInit() {
   }
 
-  async onPopover( event ) {
-    const popover = await this.popoverCtrl.create({
-      component: LogoutComponent,
-      event: event,
-      mode: 'ios',
-      cssClass: 'pop-over-style'
-    });
-
-    await popover.present();
-
+  getQrCode( uid: string ) {
+    this.qrData = uid;
+    this.codeReceived = true;
   }
 
-  loadData( event ) {
-
-    setTimeout(() => {
-      console.log('Done');
-
-      for (let index = 0; index < 20; index++) {
-        let registro = {
-          hora: "hora de prueba",
-          entrada: index % 2 == 0,
-          ubicacion: "ubicación de prueba",
-        }
-        this.data.push(registro);
-      }
-
-      this.infiniteScroll.complete();
-
-      if (this.data.length == 100) {
-        this.infiniteScroll.disabled = true;
-        console.log("MAX ELEMENTS");
-      }
-    }, 500);
-
+  async onPopover( event: any ) {
+    const popover = await this.popoverCtrl.create({
+      component: LogoutComponent,
+      cssClass: 'pop-over-style',
+      event: event,
+    });
+    return await popover.present();
   }
 
 }

@@ -1,15 +1,3 @@
-<ion-list *ngIf="user$ | async as user">
-  
-  <ion-list-header>
-    <ion-label>Información:</ion-label>
-  </ion-list-header>
-
-  <ion-item>
-    <ion-label>{{ user.email }}</ion-label>
-  </ion-item>
-
-  <ion-item (click)="onLogout()" class="red">
-    <ion-label>Cerrar sesión</ion-label>
-  </ion-item>
-
-</ion-list>
+<ion-button (click)="onLogout()" expand="block" color="danger">
+  Cerrar sesión
+</ion-button>

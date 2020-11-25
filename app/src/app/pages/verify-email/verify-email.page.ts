@@ -12,6 +12,8 @@ export class VerifyEmailPage {
 
   user$: Observable<User> = this.authSvc.afAuth.user;
 
+  resend: boolean = false;
+
   constructor( private authSvc: AuthService ) { }
 
   async onSendEmail(): Promise<void> {
@@ -20,6 +22,7 @@ export class VerifyEmailPage {
     } catch( error ) {
       console.log("Error -> ", error);
     }
+    this.resend = true;
   }
 
   ngOnDestroy(): void {

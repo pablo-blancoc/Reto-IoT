@@ -16,14 +16,15 @@ export class LogoutComponent {
 
   constructor( private popover: PopoverController, private authSvc: AuthService, private router: Router ) { }
 
-  async onLogout() {
+  onLogout() {
     try {
+      console.log("hola");
       this.authSvc.logout();
-      /* this.router.navigate(['login']); */
-
+      this.router.navigate(['login']);
     } catch( error ) {
       console.log("Error -> ", error)
     }
+    this.popover.dismiss();
   }
 
 }

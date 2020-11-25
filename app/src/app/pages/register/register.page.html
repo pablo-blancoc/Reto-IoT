@@ -1,28 +1,37 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Regístrate!</ion-title>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start" color="light">
+      <ion-back-button defaultHref="/login" mode="ios"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="all-white">¡Regístrate!</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+
+  <ion-text color="dark" class="centered ion-margin">
+    <h1>Crea una nueva cuenta</h1>
+  </ion-text>
 
   <form>
 
-    <ion-list>
+    <ion-list style="margin-top: 15%;">
 
       <ion-item lines="full">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input type="email" #email required></ion-input>
+        <ion-icon slot="start" name="mail-outline" color="primary"></ion-icon>
+        <ion-input type="email" #email placeholder="Correo electrónico" required></ion-input>
       </ion-item>
       
       <ion-item lines="full">
-        <ion-label position="floating">Password</ion-label>
-        <ion-input type="password" #password required></ion-input>
+        <ion-icon slot="start" name="key-outline" color="primary"></ion-icon>
+        <ion-input type="password" #password placeholder="Contraseña" required></ion-input>
       </ion-item>
 
     </ion-list>
 
-    <ion-row>
+    <ion-row style="margin-top: 10%;">
       <ion-col>
         <ion-button type="submit" (click)="onRegister(email, password)" expand="block">
           Registrarme
@@ -32,9 +41,13 @@
 
   </form>
 
+  <ion-text color="danger" *ngIf="validPassword == false">
+    <h6>La contraseña o el correo son inválidos, por favor revisa e intenta de nuevo.</h6>
+  </ion-text>
+
   <ion-row>
     <ion-col>
-      <p>
+      <p class="centered">
         <a href="/login">Already have an account?</a>
       </p>
     </ion-col>

@@ -1,19 +1,25 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Verifica tu correo</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="user$ | async as user">
+<ion-content *ngIf="user$ | async as user" class="ion-padding">
 
   <ion-row>
-    <ion-col>
+    <ion-col class="centered">
 
-      <h2>¡Gracias por registrarte!</h2>
+      <ion-text color="dark" class="ion-margin">
+        <h1>¡Gracias por registrarte!</h1>
+      </ion-text>
+      
+      <ion-text color="dark" class="ion-margin">
+        <h6>Te hemos enviado un correo electrónico a <strong>{{ user.email }}</strong> con un link para que puedas confirmar tu cuenta.</h6>
+      </ion-text>
 
-      <p>Te hemos enviado un correo electrónico a <strong>{{ user.email }}</strong> con un link para que puedas confirmar tu cuenta.</p>
-
-      <h4>Por favor revisa tu bandeja de correo y verifica tu cuenta</h4>
+      <ion-text color="dark" class="ion-margin">
+        <h4>Por favor revisa tu bandeja de correo y verifica tu cuenta</h4>
+      </ion-text>
 
     </ion-col>
   </ion-row>
@@ -25,6 +31,18 @@
         Reenviar el correo de verificación
       </ion-button>
 
+      <ion-text color="danger" *ngIf="resend == true">
+        <h6>Se ha reenviado el correo</h6>
+      </ion-text>
+
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-button routerLink="/login" expand="block" color="success">
+        Iniciar sesión
+      </ion-button>
     </ion-col>
   </ion-row>
 

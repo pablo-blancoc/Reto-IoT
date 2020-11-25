@@ -1,57 +1,42 @@
 <ion-header>
-    <ion-toolbar color="primary">
-      
-      <ion-buttons slot="start">
-        <ion-button (click)="onPopover( $event )">
-          <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-  
-      <ion-title>Mis Registros</ion-title>
-  
-      <ion-buttons slot="end">
-        <ion-button href="/qrcode">
-          <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-  
-    </ion-toolbar>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="onPopover( $event )">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      Código de acceso
+    </ion-title>
+
+  </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding" *ngIf="user$ | async as user">
 
-    <!-- LISTA DE REGISTROS -->
-    <ion-list>
-        
-        <ion-card *ngFor="let item of data">
-            
-            <ion-card-title *ngIf="item.entrada" color="success" class="ion-padding">
-                Entrada
-            </ion-card-title>
-            <ion-card-title *ngIf="!item.entrada" color="danger" class="ion-padding">
-                Salida
-            </ion-card-title>
-            
-            <ion-card-content>
+  <h3 class="all-black page-title">Código de acceso</h3>
+  
+  <div class="container" *ngIf="codeReceived == true">
+    
+      <ngx-qrcode class="qrcode"
+        value = "{{ qrData }}"
+        qrc-errorCorrectionLevel = "L">
+      </ngx-qrcode>
 
-                <strong>Hora:</strong> {{ item.hora }}
-                <br>
-                <strong>Ubicación:</strong> {{ item.ubicacion }}
+  </div>
 
-            </ion-card-content>
-        </ion-card>
+  <div *ngIf="codeReceived == false">
+    
+    <ion-button (click)="getQrCode( user.uid )" expand="block" color="danger">
+      Obtener código
+    </ion-button>
 
-    </ion-list>
+</div>
 
-    <!-- SI NO HAY REGISTROS -->
-    <div *ngIf="data.length == 0" class="container">
-        <h4>Todavía no tienes registros.</h4>
-    </div>
-
-    <!-- INFINITE SCROLL -->
-    <ion-infinite-scroll threshold="25%" position="bottom" (ionInfinite)="loadData($event)"  class="ion-padding">
-        <ion-infinite-scroll-content loadingSpinner="crescent" loadingText="Recuperando más datos">
-        </ion-infinite-scroll-content>
-    </ion-infinite-scroll>
+  <h3 class="all-black page-subtitle">Éste es tu código de acceso personal al edificio.</h3>
+  <h3 class="all-black page-subtitle">Acércate al lector, espera a que se tome la foto y podrás entrar.</h3>
+  <h3 class="all-black page-subtitle">Recuerda que es indispensable que cuentes con cubrebocas para el ingreso.</h3>
 
 </ion-content>

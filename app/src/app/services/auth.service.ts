@@ -27,7 +27,7 @@ export class AuthService {
     try {
       return ( await this.afAuth.currentUser ).sendEmailVerification();
     } catch( error ){
-      console.log( 'Error -> ', error );
+      return null;
     }
   }
 
@@ -39,18 +39,9 @@ export class AuthService {
     try {
       return this.afAuth.sendPasswordResetEmail( email );
     } catch( error ){
-      console.log( 'Error -> ', error );
+      return null;
     }
   }
-
-  /* async loginGoogle(): Promise<User> {
-    try {
-      const { user } = await this.afAuth.signInWithPopup( new auth.GoogleAuthProvider() );
-      return user;
-    } catch( error ){
-      console.log( 'Error -> ', error );
-    }
-  } */
 
   async register(email:string, password:string): Promise<User> {
     try {
@@ -58,7 +49,7 @@ export class AuthService {
       await this.sendVerificationEmail();
       return user;
     } catch( error ){
-      console.log( 'Error -> ', error );
+      return null;
     }
   }
   
@@ -68,7 +59,7 @@ export class AuthService {
       this.updateUserData(user);
       return user;
     } catch( error ){
-      console.log( 'Error -> ', error );
+      return null;
     }
   }
    
@@ -76,7 +67,7 @@ export class AuthService {
     try{
       await this.afAuth.signOut();
     } catch( error ){
-      console.log( 'Error -> ', error );
+      return null;
     }
   }
 

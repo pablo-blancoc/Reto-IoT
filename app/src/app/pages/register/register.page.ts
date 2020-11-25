@@ -9,6 +9,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class RegisterPage implements OnInit {
 
+  validPassword: boolean = true;
+
   constructor( private authSvc: AuthService, private router: Router ) { }
 
   ngOnInit() {
@@ -20,6 +22,8 @@ export class RegisterPage implements OnInit {
       if( user ) {
         const isVerified = this.authSvc.isEmailVerified( user );
         this.redirectUser( isVerified );
+      } else {
+        this.validPassword = false;
       }
     } catch( error ) { 
       console.log("Error -> ", error);

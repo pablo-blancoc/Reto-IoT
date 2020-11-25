@@ -9,6 +9,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { LogoutComponent } from '../../components/logout/logout.component';
 import { ComponentsModule } from '../../components/components.module';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 @NgModule({
   entryComponents: [
@@ -19,7 +20,8 @@ import { ComponentsModule } from '../../components/components.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    NgxQRCodeModule
   ],
   declarations: [
     HomePage

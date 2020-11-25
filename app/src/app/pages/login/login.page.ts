@@ -9,6 +9,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginPage implements OnInit {
 
+  passwordValid: boolean = true;
+
   constructor( private authSvc: AuthService, private router: Router ) { }
 
   ngOnInit() {
@@ -20,16 +22,18 @@ export class LoginPage implements OnInit {
       if( user ) {
         const isVerified = this.authSvc.isEmailVerified( user );
         this.redirectUser( isVerified );
+      } else {
+        this.passwordValid = false;
       }
     } catch( error ) {
-      console.log("Error -> ", error);
+      this.passwordValid = false;
     }
     
   }
   
   private redirectUser( isVerified: boolean ): void {
     if(isVerified == true) {
-      this.router.navigate(['admin']);
+      this.router.navigate(['home']);
     } else {
       this.router.navigate(['verify-email']);
     }

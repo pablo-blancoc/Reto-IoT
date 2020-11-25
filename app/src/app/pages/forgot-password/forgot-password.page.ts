@@ -14,7 +14,7 @@ export class ForgotPasswordPage {
   async onPassword(email) {
     
     try {
-      await this.authSvc.resetPassword(email.value);
+      const user = await this.authSvc.resetPassword(email.value);
       this.router.navigate(['/login']);
     } catch( error ) {
       console.log("Error -> ", error);
