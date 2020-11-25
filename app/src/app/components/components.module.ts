@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
@@ -8,6 +8,7 @@ import { LogoutComponent } from './logout/logout.component';
   imports: [],
   exports: [
     LogoutComponent
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ComponentsModule {}
