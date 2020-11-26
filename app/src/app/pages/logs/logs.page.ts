@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LogService } from '../../services/log.service';
 import { Log } from '../../shared/Log';
 
@@ -10,8 +11,15 @@ import { Log } from '../../shared/Log';
 export class LogsPage implements OnInit {
 
   Logs = [];
+  uid: string = "";
 
-  constructor( private lsv: LogService ) { }
+  constructor( private lsv: LogService, private route: ActivatedRoute, private router: Router ) {
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.uid = this.router.getCurrentNavigation().extras.state.user;
+      }
+    });
+  }
 
   ngOnInit() {
 
@@ -22,7 +30,10 @@ export class LogsPage implements OnInit {
       res.forEach(item => {
         let a = item.payload.toJSON();
         a['$key'] = item.key;
-        this.Logs.push(a as Log);
+        console.log("UID PASSED: ", this.uid, "     UID GOT: ", a['uid']);
+        if( a['uid'] == this.uid ) {
+          this.Logs.push(a as Log);
+        }
       })
     })
 
