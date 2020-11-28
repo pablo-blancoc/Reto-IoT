@@ -25,11 +25,11 @@
   <ion-card *ngFor="let log of Logs"  class="ion-padding">
     
     <ion-card-title *ngIf="log.enter == true" color="success">
-      Entrada
+      Válido
     </ion-card-title>
 
     <ion-card-title *ngIf="log.enter == false" color="danger">
-      Salida
+      Inválido
     </ion-card-title>
 
     <ion-card-content>
