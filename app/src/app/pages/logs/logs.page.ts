@@ -35,6 +35,7 @@ export class LogsPage implements OnInit {
           this.Logs.push(a as Log);
         }
       })
+      this.Logs = this.Logs.reverse();
     })
 
   }
