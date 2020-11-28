@@ -41,7 +41,7 @@ export class HomePage implements OnInit {
 
   async onActionSheet() {
     const actionSheet = await this.ActionSheetCtrl.create({
-      header: '¿Serguro que quieres cerrar sesión?',
+      header: '¿Seguro que quieres cerrar sesión?',
       buttons: [
         {
           text: 'Cerrar sesión',
@@ -56,7 +56,7 @@ export class HomePage implements OnInit {
           }
         }, 
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           role: 'cancel',
           handler: () => {
             console.log('Cancel clicked');
