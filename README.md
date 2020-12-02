@@ -11,6 +11,9 @@ ___
 
 ___
 
+[![Video final](http://img.youtube.com/vi/uU-HpXWZ9QQ/0.jpg)](https://www.youtube.com/watch?v=uU-HpXWZ9QQ "Video final")
+___
+
 ## Autores:
 * [Pablo Blanco](https://github.com/pablo-blancoc)
 * [Daniel Córdova](https://github.com/DanielCordovaV)
